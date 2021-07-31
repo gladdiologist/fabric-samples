@@ -49,9 +49,9 @@ services:
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric
     command: orderer
     volumes:
-        - ../system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
-        - ../organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
-        - ../organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/:/var/hyperledger/orderer/tls
+        - /c/Users/ybarre/src/fabric-samples/test-network/system-genesis-block/genesis.block:/var/hyperledger/orderer/orderer.genesis.block
+        - /c/Users/ybarre/src/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/msp:/var/hyperledger/orderer/msp
+        - /c/Users/ybarre/src/fabric-samples/test-network/organizations/ordererOrganizations/example.com/orderers/orderer.example.com/tls/:/var/hyperledger/orderer/tls
         - orderer.example.com:/var/hyperledger/production/orderer
     ports:
       - 7050:7050
@@ -88,8 +88,8 @@ services:
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:17051
     volumes:
         - ${DOCKER_SOCK}:/host/var/run/docker.sock
-        - ../organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp
-        - ../organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/fabric/tls
+        - /c/Users/ybarre/src/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/fabric/msp
+        - /c/Users/ybarre/src/fabric-samples/test-network/organizations/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/tls:/etc/hyperledger/fabric/tls
         - peer0.org1.example.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
@@ -127,8 +127,8 @@ services:
       - CORE_OPERATIONS_LISTENADDRESS=0.0.0.0:19051
     volumes:
         - ${DOCKER_SOCK}:/host/var/run/docker.sock
-        - ../organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp:/etc/hyperledger/fabric/msp
-        - ../organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls:/etc/hyperledger/fabric/tls
+        - /c/Users/ybarre/src/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/msp:/etc/hyperledger/fabric/msp
+        - /c/Users/ybarre/src/fabric-samples/test-network/organizations/peerOrganizations/org2.example.com/peers/peer0.org2.example.com/tls:/etc/hyperledger/fabric/tls
         - peer0.org2.example.com:/var/hyperledger/production
     working_dir: /opt/gopath/src/github.com/hyperledger/fabric/peer
     command: peer node start
@@ -154,8 +154,8 @@ services:
     command: /bin/bash
     volumes:
         - /var/run/:/host/var/run/
-        - ../organizations:/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations
-        - ../scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
+        - /c/Users/ybarre/src/fabric-samples/test-network/organizations:/opt/gopath/src/github.com/hyperledger/fabric/peer/organizations
+        - /c/Users/ybarre/src/fabric-samples/test-network/scripts:/opt/gopath/src/github.com/hyperledger/fabric/peer/scripts/
     depends_on:
       - peer0.org1.example.com
       - peer0.org2.example.com

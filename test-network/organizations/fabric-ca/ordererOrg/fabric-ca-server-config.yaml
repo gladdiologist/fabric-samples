@@ -311,6 +311,7 @@ csr:
    hosts:
      - localhost
      - example.com
+     - 172.17.0.1
    ca:
       expiry: 131400h
       pathlength: 1

@@ -26,7 +26,7 @@ services:
       - "17054:17054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ../organizations/fabric-ca/org1:/etc/hyperledger/fabric-ca-server
+      - /c/Users/ybarre/src/fabric-samples/test-network/organizations/fabric-ca/org1:/etc/hyperledger/fabric-ca-server
     container_name: ca_org1
     networks:
       - test
@@ -46,7 +46,7 @@ services:
       - "18054:18054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ../organizations/fabric-ca/org2:/etc/hyperledger/fabric-ca-server
+      - /c/Users/ybarre/src/fabric-samples/test-network/organizations/fabric-ca/org2:/etc/hyperledger/fabric-ca-server
     container_name: ca_org2
     networks:
       - test
@@ -66,7 +66,7 @@ services:
       - "19054:19054"
     command: sh -c 'fabric-ca-server start -b admin:adminpw -d'
     volumes:
-      - ../organizations/fabric-ca/ordererOrg:/etc/hyperledger/fabric-ca-server
+      - /c/Users/ybarre/src/fabric-samples/test-network/organizations/fabric-ca/ordererOrg:/etc/hyperledger/fabric-ca-server
     container_name: ca_orderer
     networks:
       - test
